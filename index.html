@@ -1,694 +1,471 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <meta charset="utf-8" />
-        <title>Ruben Camargo Website</title>
-        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-        <meta content="Programador Web Rubén Camargo" name="description" />
-        <meta content="Página Web, Programador, Freelancer, CakePHP, HTML, CSS, Wordpress" name="keywords" />
-        <meta content="Ruben Camargo" name="author" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ruben Dario Camargo Bernal | Desarrollador Full Stack PHP | Buenos Aires</title>
+    <meta name="description" content="Desarrollador Full Stack PHP con +10 años de experiencia. Especializado en Laravel, CakePHP, JavaScript. Desarrollo web, aplicaciones móviles y gestión de proyectos.">
+    <meta name="keywords" content="desarrollador full stack, PHP, Laravel, CakePHP, JavaScript, MySQL, Buenos Aires, desarrollador web, líder técnico, programador, desarrollador freelance">
+    <meta name="author" content="Ruben Dario Camargo Bernal">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://rubencamargo.github.io">
+    
+    <!-- Open Graph / Facebook -->
+    <!--
+	<meta property="og:type" content="website">
+    <meta property="og:title" content="Ruben Dario Camargo Bernal - Desarrollador Full Stack">
+    <meta property="og:description" content="Desarrollador Full Stack PHP con +10 años de experiencia. Especializado en Laravel, CakePHP y JavaScript.">
+    <meta property="og:url" content="https://rubencamargo.github.io">
+    <meta property="og:image" content="https://rubencamargo.github.io/images/og-image.jpg">
+    <meta property="og:locale" content="es_ES">
+    -->
+	
+    <!-- Twitter -->
+	<!--
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Ruben Dario Camargo Bernal - Desarrollador Full Stack">
+    <meta property="twitter:description" content="Desarrollador Full Stack PHP con +10 años de experiencia. Especializado en Laravel, CakePHP y JavaScript.">
+    <meta property="twitter:image" content="https://rubencamargo.github.io/images/twitter-image.jpg">
+    -->
+	
+    <!-- Schema.org markup for Google -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Ruben Dario Camargo Bernal",
+      "jobTitle": "Desarrollador Full Stack",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Ciudad Autónoma de Buenos Aires",
+        "addressCountry": "Argentina"
+      },
+      "email": "mailto:rubencamargo@gmail.com",
+      "telephone": "+54-9-11-2703-7330",
+      "url": "https://rubencamargo.github.io/webpage/",
+      "sameAs": [
+        "https://www.linkedin.com/in/rubencamargo/",
+        "https://github.com/rubencamargo"
+      ],
+      "knowsAbout": [
+        "PHP", "Laravel", "CakePHP", "JavaScript", "jQuery", "MySQL", 
+        "Bootstrap", "WordPress", "API REST", "GitHub", "SCRUM"
+      ],
+      "hasOccupation": {
+        "@type": "Occupation",
+        "name": "Desarrollador Full Stack",
+        "description": "Desarrollo de aplicaciones web y móviles con más de 10 años de experiencia."
+      }
+    }
+    </script>
+    
+    <!-- Preload critical resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #0d6efd;
+            --secondary: #0a58ca;
+            --dark: #212529;
+            --light: #f8f9fa;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+            background-color: #f8f9fa;
+            line-height: 1.6;
+        }
+        
+        /* Mejora de rendimiento y CLS */
+        .navbar {
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 1rem 0;
+        }
+        
+        .hero-section {
+            background: linear-gradient(rgba(13, 110, 253, 0.9), rgba(10, 88, 202, 0.9)), url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 6rem 0;
+            text-align: center;
+        }
+        
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            object-fit: cover;
+            border: 5px solid white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .section-title {
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+            color: var(--primary);
+            font-size: 2rem;
+        }
+        
+        .services-section {
+            padding: 5rem 0;
+            background-color: white;
+        }
+        
+        .service-card {
+            text-align: center;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+            height: 100%;
+            border-top: 4px solid var(--primary);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .service-icon {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .skills-section {
+            padding: 5rem 0;
+            background-color: var(--light);
+        }
+        
+        .skill-badge {
+            margin: 5px;
+            font-size: 0.9rem;
+            padding: 8px 15px;
+        }
+        
+        .projects-section {
+            padding: 5rem 0;
+        }
+        
+        .project-card {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+            height: 100%;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .project-img {
+            height: 200px;
+            object-fit: cover;
+            width: 100%;
+        }
+        
+        .cta-section {
+            padding: 5rem 0;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            text-align: center;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary);
+            border-color: var(--primary);
+            padding: 12px 30px;
+            font-weight: 600;
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--secondary);
+            border-color: var(--secondary);
+        }
+        
+        .btn-outline-light:hover {
+            color: var(--primary);
+        }
+        
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 3rem 0;
+        }
+        
+        .social-links a {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1.5rem;
+            margin-right: 15px;
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+        
+        .social-links a:hover {
+            color: white;
+            transform: translateY(-3px);
+        }
 
-        <!--[if lt IE 9]>
-            <script src="js/html5shiv.js"></script>
-        <![endif]-->
+        /* Mejoras de accesibilidad */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
 
-        <!-- CSS Files
-    ================================================== -->
-        <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-        <link href="css/bootstrap-grid.min.css" rel="stylesheet" type="text/css" />
-        <link href="css/bootstrap-reboot.min.css" rel="stylesheet" type="text/css" />
-        <link href="css/animate.css" rel="stylesheet" type="text/css" />
-        <link href="css/owl.carousel.css" rel="stylesheet" type="text/css" />
-        <link href="css/owl.theme.css" rel="stylesheet" type="text/css" />
-        <link href="css/owl.transitions.css" rel="stylesheet" type="text/css" />
-        <link href="css/magnific-popup.css" rel="stylesheet" type="text/css" />
-        <link href="css/jquery.countdown.css" rel="stylesheet" type="text/css" />
-        <link href="css/style.css" rel="stylesheet" type="text/css" />
-
-        <!-- color scheme -->
-        <link id="colors" href="css/colors/scheme-02.css" rel="stylesheet" type="text/css" />
-        <link href="css/coloring.css" rel="stylesheet" type="text/css" />
-    </head>
-
-    <body>
-        <div id="wrapper">
-            <div class="page-overlay">
-                <div class="preloader-wrap">
-                    <div class="spinner">
-                        <div class="bounce1"></div>
-                        <div class="bounce2"></div>
-                        <div class="bounce3"></div>
-                    </div>
-                </div>
+        /* Mejoras de rendimiento */
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#" aria-label="Ruben Camargo - Inicio">Ruben Camargo</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">Servicios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#skills">Habilidades</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects">Proyectos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contacto</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-primary text-white ms-2" href="cv.html">Ver CV</a>
+                    </li>
+                </ul>
             </div>
+        </div>
+    </nav>
 
-            <!-- header begin -->
-            <header class="transparent scroll-light">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="d-flex justify-content-between">
-                                <div class="align-self-center header-col-left">
-                                    <!-- logo begin -->
-                                    <div id="logo">
-                                        <a href="index.html">
-                                            Rubén Camargo
-                                        </a>
-                                    </div>
-                                    <!-- logo close -->
-                                </div>
-                                <div class="align-self-center ml-auto header-col-mid">
-                                    <!-- mainmenu begin -->
-                                    <ul id="mainmenu" class="scrollnav">
-                                        <li><a href="#section-hero" class="active">Inicio</a></li>
-										<li></li>
-										<!--
-                                        <li><a href="#section-about">Sobre Mi</a></li>
-										<li></li>
-										<li><a href="#section-services">Servicios</a></li>
-										<li></li>
-										-->
-                                        <li><a href="#section-portfolio">Portafolio</a></li>
-										<li></li>
-										<!--
-                                        <li><a href="#section-blog">Blog</a></li>
-                                        <li></li>
-										-->
-										<li><a href="#section-contact">Contacto</a></li>
-										<li></li>
-                                    </ul>
-
-                                    <!-- mainmenu close -->
-                                </div>
-                                <div class="align-self-center ml-auto header-col-right">
-                                    <div class="social-icons">
-                                        <!--
-										<a href="#"><i class="fa fa-facebook fa-lg"></i></a>
-                                        <a href="#"><i class="fa fa-twitter fa-lg"></i></a>
-										<a href="#"><i class="fa fa-instagram fa-lg"></i></a>
-										-->
-                                        <a href="https://ar.linkedin.com/in/rubencamargo" target="_blank"><i class="fa fa-linkedin fa-lg"></i></a>
-                                    </div>
-
-                                    <span id="menu-btn"></span>
-                                </div>
-                                <div class="clearfix"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </header>
-            <!-- header close -->
-            <!-- content begin -->
-            <div class="no-bottom no-top text-light" id="content" data-bgcolor="#202020">
-                <div id="top"></div>
-
-                <section id="section-hero" class="vertical-center text-light" data-bgimage="url(images/background/3.jpg) top" data-stellar-background-ratio=".5">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-8 offset-md-2 text-center">
-                                <h4 class="id-color">Bienvenido(a)</h4>
-                                <div class="spacer-10"></div>
-
-                                <div class="h1_big text-white">
-                                    Soy
-                                    <div class="typed-strings">
-                                        <p>Analista</p>
-                                        <p>Diseñador</p>
-                                        <p>Implementador</p>
-										<p>Rubén Camargo</p>
-                                    </div>
-                                    <div class="typed"></div>
-                                </div>
-                            </div>
-
-                            <div class="spacer-30"></div>
-
-                            <div class="col-md-6 offset-md-3 text-center">
-                                <p class="lead wow fadeInUp" data-wow-delay=".75s">
-									Análisis, Diseño e Implementación de Sistemas de Gestión, Páginas Web Empresariales o
-									Personales.
-								</p>
-								<div class="spacer-20"></div>
-								<!--
-                                <a class="btn-custom scroll-to wow fadeInUp" data-wow-delay="1s" href="#section-about">
-									Sobre Mi
-								</a>
-								-->
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-				<!--
-                <section id="section-about" data-bgcolor="#202020">
-                    <div class="container">
-                        <div class="row align-items-center">
-                            <div class="col-lg-6 mb-sm-30 text-center">
-                                <div class="de-images">
-                                    <img class="di-small-2 wow fadeInLeft" src="images/misc/3b.jpg" alt="" />
-                                    <img class="img-fluid wow fadeInRight" src="images/misc/3a.jpg" alt="" />
-                                </div>
-                            </div>
-
-                            <div class="col-lg-5 offset-md-1 wow fadeInLeft" data-wow-delay=".5s">
-                                <h2>Sobre Mi</h2>
-                                <p>
-									At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium 
-									voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint 
-									occaecati cupiditate non provident,
-									similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et 
-									dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.
-                                </p>
-                                <div class="spacer-10"></div>
-                                <span id="btn-show-skills" class="btn-border wow fadeInUp" data-wow-delay="1s">
-									Show My Skills
-								</span>
-                            </div>
-                        </div>
-
-                        <div id="skills" class="row">
-                            <div class="spacer-double"></div>
-                            <div class="spacer-double"></div>
-                            <div class="col-md-4">
-                                <div class="skill-bar style-2">
-                                    <h5>Design</h5>
-                                    <div class="de-progress">
-                                        <div class="value"></div>
-                                        <div class="progress-bar" data-value="80%"></div>
-                                    </div>
-                                </div>
-
-                                <div class="skill-bar style-2">
-                                    <h5>Branding</h5>
-                                    <div class="de-progress">
-                                        <div class="value"></div>
-                                        <div class="progress-bar" data-value="70%"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-md-4">
-                                <div class="skill-bar style-2">
-                                    <h5>Marketing</h5>
-                                    <div class="de-progress">
-                                        <div class="value"></div>
-                                        <div class="progress-bar" data-value="70%"></div>
-                                    </div>
-                                </div>
-
-                                <div class="skill-bar style-2">
-                                    <h5>Development</h5>
-                                    <div class="de-progress">
-                                        <div class="value"></div>
-                                        <div class="progress-bar" data-value="90%"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-md-4">
-                                <div class="skill-bar style-2">
-                                    <h5>Photography</h5>
-                                    <div class="de-progress">
-                                        <div class="value"></div>
-                                        <div class="progress-bar" data-value="90%"></div>
-                                    </div>
-                                </div>
-
-                                <div class="skill-bar style-2">
-                                    <h5>SEO</h5>
-                                    <div class="de-progress">
-                                        <div class="value"></div>
-                                        <div class="progress-bar" data-value="75%"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-				</section>
-				-->
-
-				<!--
-                <section id="section-services" data-bgcolor="#252525">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-6 offset-lg-3">
-                                <div class="text-center">
-                                    <h2>Our Services</h2>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                                    <div class="spacer-30"></div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-lg-4 col-md-6 mb30 wow fadeInRight" data-wow-delay="0s">
-                                <div class="f-box f-icon-left f-icon-circle f-border">
-                                    <i class="fa fa-laptop id-color"></i>
-                                    <div class="fb-text">
-                                        <h4>Website Design</h4>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-lg-4 col-md-6 mb30 wow fadeInRight" data-wow-delay=".25s">
-                                <div class="f-box f-icon-left f-icon-circle f-border">
-                                    <i class="fa fa-paper-plane-o id-color"></i>
-                                    <div class="fb-text">
-                                        <h4>Email Marketing</h4>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-lg-4 col-md-6 mb30 wow fadeInRight" data-wow-delay=".5s">
-                                <div class="f-box f-icon-left f-icon-circle f-border">
-                                    <i class="fa fa-line-chart id-color"></i>
-                                    <div class="fb-text">
-                                        <h4>Digital Analytics</h4>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-lg-4 col-md-6 mb30 wow fadeInRight" data-wow-delay="0s">
-                                <div class="f-box f-icon-left f-icon-circle f-border">
-                                    <i class="fa fa-object-group id-color"></i>
-                                    <div class="fb-text">
-                                        <h4>Visual Editor</h4>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-lg-4 col-md-6 mb30 wow fadeInRight" data-wow-delay=".25s">
-                                <div class="f-box f-icon-left f-icon-circle f-border">
-                                    <i class="fa fa-hdd-o id-color"></i>
-                                    <div class="fb-text">
-                                        <h4>Backup &amp; Security</h4>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-lg-4 col-md-6 mb30 wow fadeInRight" data-wow-delay=".5s">
-                                <div class="f-box f-icon-left f-icon-circle f-border">
-                                    <i class="fa fa-comments-o id-color"></i>
-                                    <div class="fb-text">
-                                        <h4>IT Consultancy</h4>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-				</section>
-				-->
-
-                <section id="section-cta" class="text-light" data-bgimage="url(images/background/3.jpg) top" data-stellar-background-ratio=".5">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-8 offset-md-2 text-center">
-                                <h2>"La programación es un arte en el que no se deja de resolver problemas."</h2>
-								<!--
-								<div class="spacer-10"></div>
-								<a href="#" class="btn-custom">Hire Me Now</a>
-								-->
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-				<!-- section begin -->
-				<!--
-                <section id="section-testimonial" class="custom-1" data-bgcolor="#252525">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-6 offset-lg-3">
-                                <div class="text-center">
-                                    <h2>Testimonials</h2>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                                    <div class="spacer-30"></div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-md-8 offset-md-2">
-                                <div id="testimonial-carousel-single" class="owl-carousel owl-theme wow fadeInUp">
-                                    <blockquote class="testimonial-big text-light">
-                                        <img src="Images/people/1.jpg" alt="" />
-                                        I'm always impressed with the services. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-                                        nostrud exercitation ullamco laboris nisi ut aliquip.
-
-                                        <span class="name">John, Customer</span>
-                                    </blockquote>
-
-                                    <blockquote class="testimonial-big text-light">
-                                        <img src="Images/people/2.jpg" alt="" />
-                                        I'm always impressed with the services. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-                                        nostrud exercitation ullamco laboris nisi ut aliquip.
-
-                                        <span class="name">Sandra, Customer</span>
-                                    </blockquote>
-
-                                    <blockquote class="testimonial-big text-light">
-                                        <img src="Images/people/3.jpg" alt="" />
-                                        I'm always impressed with the services. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-                                        nostrud exercitation ullamco laboris nisi ut aliquip.
-
-                                        <span class="name">Michael, Customer</span>
-                                    </blockquote>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-				</section>
-				-->
-                <!-- section close -->
-
-                <!-- section begin -->
-                <section id="section-portfolio" data-bgcolor="#202020">
-                    <div class="container">
-                        <!-- portfolio filter begin -->
-                        <div class="row">
-                            <div class="col-md-12 text-center">
-                                <h2>Portafolio</h2>
-                            </div>
-
-                            <div class="spacer-single"></div>
-
-                            <div class="col-md-12 text-center">
-								<!--
-								<ul id="filters">
-                                    <li><a href="#" data-filter="*" class="selected">Todos los Proyectos</a></li>
-                                    <li><a href="#" data-filter=".illustration">illustration</a></li>
-                                    <li><a href="#" data-filter=".mobile">mobile</a></li>
-                                    <li><a href="#" data-filter=".photography">photography</a></li>
-                                    <li><a href="#" data-filter=".website">website</a></li>
-								</ul>
-								-->
-
-                                <div id="gallery" class="gallery full-gallery de-gallery pf_full_width pf_3_cols grid sequence">
-                                    <!-- gallery item -->
-                                    <div class="item illustration website gallery-item pf-click" data-value="project-details-image-big1.html">
-                                        <div class="picframe wow">
-                                            <span class="overlay">
-                                                <span class="pf_text">
-                                                    <span class="project-name">AITA</span>
-                                                </span>
-                                            </span>
-                                            <img src="images/portfolio-2/1.jpg" alt="" />
-                                        </div>
-                                    </div>
-                                    <!-- close gallery item -->
-
-                                    <!-- gallery item -->
-                                    <div class="item photography gallery-item pf-click" data-value="project-details-image-big2.html">
-                                        <div class="picframe wow">
-                                            <span class="overlay">
-                                                <span class="pf_text">
-                                                    <span class="project-name">Aquotech</span>
-                                                </span>
-                                            </span>
-                                            <img src="images/portfolio-2/2.jpg" alt="" />
-                                        </div>
-                                    </div>
-                                    <!-- close gallery item -->
-
-                                    <!-- gallery item -->
-                                    <div class="item illustration gallery-item pf-click" data-value="project-details-image-big3.html">
-                                        <div class="picframe wow">
-                                            <span class="overlay">
-                                                <span class="pf_text">
-                                                    <span class="project-name">Cyber Oprac</span>
-                                                </span>
-                                            </span>
-                                            <img src="images/portfolio-2/3.jpg" alt="" />
-                                        </div>
-                                    </div>
-                                    <!-- close gallery item -->
-
-                                    <!-- gallery item -->
-                                    <div class="item photography illustration mobile gallery-item pf-click" data-value="project-details-image-big4.html">
-                                        <div class="picframe wow">
-                                            <span class="overlay">
-                                                <span class="pf_text">
-                                                    <span class="project-name">Infinit Air</span>
-                                                </span>
-                                            </span>
-                                            <img src="images/portfolio-2/4.jpg" alt="" />
-                                        </div>
-                                    </div>
-                                    <!-- close gallery item -->
-
-                                    <!-- gallery item -->
-                                    <div class="item photography mobile website gallery-item pf-click" data-value="project-details-image-big5.html">
-                                        <div class="picframe wow">
-                                            <span class="overlay">
-                                                <span class="pf_text">
-                                                    <span class="project-name">Negocios Líquidos</span>
-                                                </span>
-                                            </span>
-                                            <img src="images/portfolio-2/5.jpg" alt="" />
-                                        </div>
-                                    </div>
-                                    <!-- close gallery item -->
-
-                                    <!-- gallery item -->
-                                    <div class="item mobile website gallery-item pf-click" data-value="project-details-image-big6.html">
-                                        <div class="picframe wow">
-                                            <span class="overlay">
-                                                <span class="pf_text">
-                                                    <span class="project-name">Serenata Guayanesa</span>
-                                                </span>
-                                            </span>
-                                            <img src="images/portfolio-2/6.jpg" alt="" />
-                                        </div>
-                                    </div>
-                                    <!-- close gallery item -->
-                                </div>
-                            </div>
-                            <!-- portfolio filter close -->
-                        </div>
-                    </div>
-                </section>
-                <!-- section close -->
-
-                <div id="loader-area" data-bgcolor="#202020">
-                    <div class="container">
-                        <div class="project-load"></div>
-                    </div>
-                </div>
-
-				<!--
-                <section id="section-blog" data-bgcolor="#252525">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-6 offset-lg-3">
-                                <div class="text-center">
-                                    <h2>Our Blog</h2>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                                    <div class="spacer-30"></div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-lg-4 col-md-6 mb30">
-                                <div class="bloglist item">
-                                    <div class="post-content">
-                                        <div class="post-image">
-                                            <img alt="" src="images/news/1.jpg" />
-                                            <div class="post-info">
-                                                <div class="inner"><span class="post-date">10 hours ago</span> <span class="post-author">Oscar Helman</span></div>
-                                            </div>
-                                        </div>
-                                        <div class="post-text">
-                                            <h4><a href="#">Better User Interface</a></h4>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-lg-4 col-md-6 mb30">
-                                <div class="bloglist item">
-                                    <div class="post-content">
-                                        <div class="post-image">
-                                            <img alt="" src="images/news/2.jpg" />
-                                            <div class="post-info">
-                                                <div class="inner"><span class="post-date">10 hours ago</span> <span class="post-author">Oscar Helman</span></div>
-                                            </div>
-                                        </div>
-                                        <div class="post-text">
-                                            <h4><a href="#">Experts Web Design Tips</a></h4>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-lg-4 col-md-6 mb30">
-                                <div class="bloglist item">
-                                    <div class="post-content">
-                                        <div class="post-image">
-                                            <img alt="" src="images/news/3.jpg" />
-                                            <div class="post-info">
-                                                <div class="inner"><span class="post-date">10 hours ago</span> <span class="post-author">Oscar Helman</span></div>
-                                            </div>
-                                        </div>
-                                        <div class="post-text">
-                                            <h4><a href="#">Importance Of Web Design</a></h4>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-				</section>
-				-->
-
-				<!-- section begin -->
-				<section id="section-contact" data-bgcolor="#202020">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-6 offset-lg-3">
-                                <div class="text-center">
-                                    <h2>Contacto</h2>
-                                    <p>
-										No dude en solicitar asesoría para desarrollar su proyecto.
-									</p>
-                                    <div class="spacer-30"></div>
-                                </div>
-                            </div>
-                        </div>
-
-						<!--
-                        <form name="contactForm" id="contact_form" class="row form-default form-dark" method="post" action="email.php">
-                            <div class="col-md-6">
-                                <div class="field-set">
-                                    <input type="text" name="name" id="name" class="form-control" placeholder="Nombre" />
-                                    <div class="line-fx"></div>
-                                </div>
-
-                                <div class="field-set">
-                                    <input type="text" name="email" id="email" class="form-control" placeholder="Correo Electrónico" />
-                                    <div class="line-fx"></div>
-                                </div>
-
-                                <div class="field-set">
-                                    <input type="text" name="phone" id="phone" class="form-control" placeholder="Teléfono" />
-                                    <div class="line-fx"></div>
-                                </div>
-                            </div>
-
-                            <div class="col-md-6">
-                                <div class="field-set">
-                                    <textarea name="message" id="message" class="form-control" placeholder="Mensaje"></textarea>
-                                    <div class="line-fx"></div>
-                                </div>
-                            </div>
-
-                            <div class="spacer-single"></div>
-
-                            <div class="col-md-12 text-center">
-                                <div id="submit">
-                                    <input type="submit" id="send_message" value="Enviar" class="btn btn-custom color-2" />
-                                </div>
-                                <div id="mail_success" class="success">Your message has been sent successfully.</div>
-                                <div id="mail_fail" class="error">Sorry, error occured this time sending your message.</div>
-                            </div>
-						</form>
-						-->
-
-                        <div class="spacer-double"></div>
-
-                        <div class="row text-center wow fadeInUp">
-                            <div class="col-md-4">
-                                <div class="wm-1"></div>
-                                <i class="icon_mobile id-color size40 mb20"></i>
-                                <h6 class="id-color">Teléfono</h6>
-                                <p>(+54) 11 2703 7330</p>
-                            </div>
-
-                            <div class="col-md-4">
-                                <div class="wm-1"></div>
-                                <i class="icon_house_alt id-color size40 mb20"></i>
-                                <h6 class="id-color">Oficina</h6>
-                                <p>Barracas, Buenos Aires, Argentina</p>
-                            </div>
-
-                            <div class="col-md-4">
-                                <div class="wm-1"></div>
-                                <i class="icon_mail_alt id-color size40 mb20"></i>
-                                <h6 class="id-color">Correo Electrónico</h6>
-                                <p>rubencamargo<code>@</code>gmail.com</p>
-                            </div>
-                        </div>
-                    </div>
-				</section>
-            </div>
-            <!-- content close -->
-
-            <!-- footer begin -->
-            <footer class="dark">
-                <div class="container">
-                    <div class="row align-items-center">
-                        <div class="col-md-6 sm-text-center mb-sm-30">
-                            &copy; Copyright 2020 - Rubén Camargo
-                        </div>
-
-                        <div class="col-md-6 text-md-right text-sm-left">
-                            <div class="social-icons">
-								<!--
-								<a href="#"><i class="fa fa-facebook fa-lg"></i></a>
-                                <a href="#"><i class="fa fa-twitter fa-lg"></i></a>
-                                <a href="#"><i class="fa fa-google-plus fa-lg"></i></a>
-								<a href="#"><i class="fa fa-rss fa-lg"></i></a>
-								-->
-								<a href="https://ar.linkedin.com/in/rubencamargo" target="_blank">
-									<i class="fa fa-linkedin fa-lg"></i>
-								</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </footer>
-            <!-- footer close -->
-
-            <a href="#" id="back-to-top"></a>
-
-            <div id="preloader">
-                <div class="spinner">
-                    <div class="bounce1"></div>
-                    <div class="bounce2"></div>
-                    <div class="bounce3"></div>
+    <!-- Hero Section -->
+    <header class="hero-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <img src="https://placehold.co/180x180/0d6efd/white?text=RC" alt="Ruben Dario Camargo Bernal - Desarrollador Full Stack" class="profile-img rounded-circle mb-4" width="180" height="180">
+                    <h1 class="display-4 fw-bold mb-3">Ruben Dario <br> Camargo Bernal</h1>
+                    <p class="lead mb-4">Desarrollador Full Stack & Líder Técnico con más de 10 años de experiencia</p>
+                    <p class="mb-5"><i class="fas fa-map-marker-alt me-2" aria-hidden="true"></i>Ciudad Autónoma de Buenos Aires, Argentina</p>
+                    <a href="#contact" class="btn btn-light btn-lg me-3">Contactar</a>
+                    <a href="#projects" class="btn btn-outline-light btn-lg">Ver Proyectos</a>
                 </div>
             </div>
         </div>
+    </header>
 
-        
+    <!-- Services Section -->
+    <section id="services" class="services-section">
+        <div class="container">
+            <div class="row justify-content-center mb-5">
+                <div class="col-lg-8 text-center">
+                    <h2 class="section-title">Servicios Profesionales</h2>
+                    <p class="lead">Soluciones tecnológicas personalizadas para impulsar tu negocio</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-laptop-code" aria-hidden="true"></i>
+                        </div>
+                        <h3>Desarrollo Web</h3>
+                        <p>Creación de aplicaciones web modernas, responsivas y escalables utilizando tecnologías como PHP, Laravel, JavaScript y más.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-mobile-alt" aria-hidden="true"></i>
+                        </div>
+                        <h3>Desarrollo Móvil</h3>
+                        <p>Aplicaciones móviles híbridas para iOS y Android desarrolladas con frameworks modernos como PhoneGap y tecnologías web.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-project-diagram" aria-hidden="true"></i>
+                        </div>
+                        <h3>Gestión de Proyectos</h3>
+                        <p>Liderazgo técnico y coordinación de equipos de desarrollo utilizando metodologías ágiles como SCRUM.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <!-- Javascript Files
-    ================================================== -->
-        <script src="js/jquery.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-        <script src="js/wow.min.js"></script>
-        <script src="js/jquery.isotope.min.js"></script>
-        <script src="js/easing.js"></script>
-        <script src="js/owl.carousel.js"></script>
-        <script src="js/validation.js"></script>
-        <script src="js/jquery.magnific-popup.min.js"></script>
-        <script src="js/enquire.min.js"></script>
-        <script src="js/jquery.stellar.min.js"></script>
-        <script src="js/jquery.plugin.js"></script>
-        <script src="js/typed.js"></script>
-        <script src="js/typed-custom.js"></script>
-        <script src="js/jquery.countTo.js"></script>
-        <script src="js/jquery.countdown.js"></script>
-        <script src="js/designesia.js"></script>
-    </body>
+    <!-- Skills Section -->
+    <section id="skills" class="skills-section">
+        <div class="container">
+            <div class="row justify-content-center mb-5">
+                <div class="col-lg-8 text-center">
+                    <h2 class="section-title">Habilidades Técnicas</h2>
+                    <p class="lead">Tecnologías y herramientas que domino</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 text-center">
+                    <span class="badge bg-primary skill-badge">PHP</span>
+                    <span class="badge bg-primary skill-badge">Laravel</span>
+                    <span class="badge bg-primary skill-badge">CakePHP</span>
+                    <span class="badge bg-primary skill-badge">JavaScript</span>
+                    <span class="badge bg-primary skill-badge">jQuery</span>
+                    <span class="badge bg-primary skill-badge">MySQL</span>
+                    <span class="badge bg-primary skill-badge">Bootstrap</span>
+                    <span class="badge bg-primary skill-badge">WordPress</span>
+                    <span class="badge bg-primary skill-badge">API REST</span>
+                    <span class="badge bg-primary skill-badge">GitHub</span>
+                    <span class="badge bg-primary skill-badge">SCRUM</span>
+                    <span class="badge bg-primary skill-badge">NodeJs</span>
+                    <span class="badge bg-primary skill-badge">CSS</span>
+                    <span class="badge bg-primary skill-badge">Jira</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects-section">
+        <div class="container">
+            <div class="row justify-content-center mb-5">
+                <div class="col-lg-8 text-center">
+                    <h2 class="section-title">Proyectos Destacados</h2>
+                    <p class="lead">Algunos de mis trabajos más relevantes</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="project-card">
+                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" class="project-img w-100" alt="Plataforma de reservas de hoteles desarrollada en PHP" width="600" height="200">
+                        <div class="p-4">
+                            <h3>Plataforma de Reservas</h3>
+                            <p>Desarrollo completo de portal de reservas de paquetes turísticos con integración de pasarelas de pago.</p>
+                            <div class="mb-3">
+                                <span class="badge bg-light text-dark">PHP</span>
+                                <span class="badge bg-light text-dark">CakePHP</span>
+                                <span class="badge bg-light text-dark">MySQL</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="project-card">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" class="project-img w-100" alt="Sistema administrativo con Laravel y Azure AD" width="600" height="200">
+                        <div class="p-4">
+                            <h3>Sistema Administrativo</h3>
+                            <p>Aplicación web administrativa desarrollada en Laravel con integración Azure AD para gestión interna.</p>
+                            <div class="mb-3">
+                                <span class="badge bg-light text-dark">Laravel</span>
+                                <span class="badge bg-light text-dark">Azure AD</span>
+                                <span class="badge bg-light text-dark">Bootstrap</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="project-card">
+                        <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" class="project-img w-100" alt="Tienda E-commerce con WordPress y WooCommerce" width="600" height="200">
+                        <div class="p-4">
+                            <h3>Tienda E-commerce</h3>
+                            <p>Desarrollo de tienda online con carrito de compras utilizando WordPress y WooCommerce.</p>
+                            <div class="mb-3">
+                                <span class="badge bg-light text-dark">WordPress</span>
+                                <span class="badge bg-light text-dark">WooCommerce</span>
+                                <span class="badge bg-light text-dark">PHP</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section id="contact" class="cta-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <h2 class="mb-4">¿Listo para comenzar tu próximo proyecto?</h2>
+                    <p class="lead mb-5">Contáctame para discutir cómo puedo ayudar a hacer realidad tus ideas</p>
+                    <a href="mailto:rubencamargo@gmail.com" class="btn btn-light btn-lg me-3">Enviar Email</a>
+                    <a href="cv.html" class="btn btn-outline-light btn-lg">Ver CV Completo</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <h3>Ruben Dario Camargo Bernal</h3>
+                    <p>Desarrollador Full Stack con más de 10 años de experiencia creando soluciones web innovadoras y eficientes.</p>
+                </div>
+                <div class="col-md-6 mb-4 text-md-end">
+                    <div class="social-links mb-3">
+                        <a href="https://www.linkedin.com/in/rubencamargo/" target="_blank" aria-label="LinkedIn" rel="noopener noreferrer">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://github.com/rubencamargo" target="_blank" aria-label="GitHub" rel="noopener noreferrer">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="mailto:rubencamargo@gmail.com" aria-label="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                    <p>© 2024 Ruben Dario Camargo Bernal. Todos los derechos reservados.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Schema.org para la página -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Ruben Dario Camargo Bernal - Desarrollador Full Stack",
+      "url": "https://rubencamargo.github.io/",
+      "description": "Desarrollador Full Stack PHP con más de 10 años de experiencia. Especializado en Laravel, CakePHP, JavaScript y gestión de proyectos.",
+      "author": {
+        "@type": "Person",
+        "name": "Ruben Dario Camargo Bernal"
+      }
+    }
+    </script>
+</body>
 </html>
