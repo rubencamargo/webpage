@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador de Sitemap.xml</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #6e8efb;
+            --secondary: #a777e3;
+            --dark: #2c3e50;
+            --light: #f8f9fa;
+            --success: #28a745;
+            --danger: #dc3545;
+            --warning: #ffc107;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: #333;
+            min-height: 100vh;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .container {
+            max-width: 1000px;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            padding: 30px;
+            margin-top: 20px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        h1 {
+            color: var(--dark);
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .description {
+            color: #666;
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .instructions {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 25px;
+            border-left: 4px solid var(--primary);
+        }
+        
+        h2 {
+            color: var(--dark);
+            margin: 25px 0 15px 0;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--primary);
+        }
+        
+        .instructions ol {
+            margin-left: 20px;
+        }
+        
+        .instructions li {
+            margin-bottom: 10px;
+            line-height: 1.5;
+        }
+        
+        .url-list {
+            margin: 20px 0;
+        }
+        
+        .url-item {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+        }
+        
+        .url-text {
+            flex-grow: 1;
+            margin-right: 15px;
+            font-family: monospace;
+            font-size: 16px;
+        }
+        
+        .result-container {
+            margin-top: 30px;
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            position: relative;
+        }
+        
+        pre {
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-family: monospace;
+            line-height: 1.5;
+            max-height: 400px;
+            overflow-y: auto;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            margin: 10px 5px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background-color: #5a7df9;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn-success {
+            background-color: var(--success);
+        }
+        
+        .btn-success:hover {
+            background-color: #218838;
+        }
+        
+        .copy-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+        
+        .alert {
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            display: none;
+        }
+        
+        .alert-success {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        
+        .step-number {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            background-color: var(--primary);
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            margin-right: 10px;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .url-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .url-text {
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Generador de Sitemap.xml</h1>
+            <p class="description">Genera un sitemap.xml para tu sitio web en GitHub Pages con index.html y cv.html</p>
+        </header>
+        
+        <div class="instructions">
+            <h2><span class="step-number">1</span> Instrucciones</h2>
+            <ol>
+                <li>Genera el contenido del sitemap.xml con el botón inferior</li>
+                <li>Copia el contenido generado</li>
+                <li>Crea un archivo llamado <code>sitemap.xml</code> en la raíz de tu repositorio</li>
+                <li>Pega el contenido y haz commit</li>
+                <li>Envía el sitemap a Google Search Console</li>
+            </ol>
+        </div>
+        
+        <div class="url-list">
+            <h2><span class="step-number">2</span> URLs que se incluirán en el sitemap</h2>
+            <div class="url-item">
+                <div class="url-text">https://rubencamargo.github.io/</div>
+            </div>
+            <div class="url-item">
+                <div class="url-text">https://rubencamargo.github.io/cv.html</div>
+            </div>
+        </div>
+        
+        <div style="text-align: center; margin: 30px 0;">
+            <button class="btn btn-success" onclick="generateSitemap()">
+                <i class="fas fa-code"></i> Generar Sitemap
+            </button>
+        </div>
+        
+        <div class="result-container" id="resultContainer" style="display: none;">
+            <h2><span class="step-number">3</span> Tu Sitemap.xml</h2>
+            <button class="btn copy-btn" onclick="copyToClipboard()">
+                <i class="fas fa-copy"></i> Copiar
+            </button>
+            <pre id="sitemapOutput"></pre>
+            
+            <div style="margin-top: 20px;">
+                <h2><span class="step-number">4</span> Próximos pasos</h2>
+                <ol>
+                    <li>Copia el contenido anterior</li>
+                    <li>Crea un archivo llamado <strong>sitemap.xml</strong> en la raíz de tu repositorio</li>
+                    <li>Pega el contenido en el archivo y guárdalo</li>
+                    <li>Haz commit y push a tu repositorio</li>
+                    <li>Ve a Google Search Console → Sitemaps → Ingresa "sitemap.xml" → Enviar</li>
+                </ol>
+                
+                <p style="margin-top: 15px;">
+                    <strong>URL de tu sitemap:</strong> 
+                    <code id="sitemapUrl">https://rubencamargo.github.io/sitemap.xml</code>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function generateSitemap() {
+            const today = new Date().toISOString().split('T')[0];
+            
+            const sitemapContent = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://rubencamargo.github.io/</loc>
+    <lastmod>${today}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://rubencamargo.github.io/cv.html</loc>
+    <lastmod>${today}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+</urlset>`;
+            
+            document.getElementById('sitemapOutput').textContent = sitemapContent;
+            document.getElementById('resultContainer').style.display = 'block';
+            
+            // Scroll to results
+            document.getElementById('resultContainer').scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        function copyToClipboard() {
+            const sitemapContent = document.getElementById('sitemapOutput').textContent;
+            navigator.clipboard.writeText(sitemapContent).then(() => {
+                alert('¡Sitemap copiado al portapapeles!');
+            }).catch(err => {
+                console.error('Error al copiar: ', err);
+            });
+        }
+        
+        // Generate sitemap automatically when page loads
+        window.onload = generateSitemap;
+    </script>
+</body>
+</html>
